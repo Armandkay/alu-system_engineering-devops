@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-# configures container to run Nginx as the nginx user
-chown nginx:nginx /etc/nginx/nginx.conf
-chmod a+rwx /etc/nginx/nginx.conf
-sed -i 's/80/8080/' /etc/nginx/sites-available/default
-pkill apache2
-su nginx service nginx restart
+if [[ $1 == "yes" ]]; then
+    {
+        echo 'this is testing EOF with indent'
+        echo 'this is testing EOF with indent'
+        cat -
+        echo 'these lines wanted to be without leading indent'
+        echo 'these lines wanted to be without leading indent'
+    } > ./eofoutput.txt
+fi
